@@ -1,0 +1,52 @@
+/* signup.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .gradient-custom-4 {
+    background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 576px) {
+    .card-body {
+      padding: 3rem;
+    }
+  
+    .text-white {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (min-width: 576px) {
+    .card-body {
+      padding: 4rem;
+    }
+  
+    .text-white {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .card-body {
+      padding: 5rem;
+    }
+  
+    .text-white {
+      font-size: 1.8rem;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .card-body {
+      padding: 6rem;
+    }
+  
+    .text-white {
+      font-size: 2rem;
+    }
+  }
+  

@@ -40,9 +40,6 @@ function Createyour() {
     toast.error(`❌ Error: ${err.message}`);
   }
 };
-
-
-
   return (
     <>
       <div>
