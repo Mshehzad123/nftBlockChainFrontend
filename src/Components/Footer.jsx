@@ -7,9 +7,9 @@ function Footer() {
   <div className="container">
     <div className="row">
       <div className="col-lg-12">
-        <p>Copyright © 2022 <a href="/">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+        <p>Copyright © 2024 <a href="/">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
           &nbsp;&nbsp;
-          Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com" >TemplateMo</a></p>
+          Designed by <span >Shehzad</span></p>
       </div>
     </div>
   </div>

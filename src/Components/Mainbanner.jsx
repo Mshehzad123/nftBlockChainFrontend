@@ -1,171 +1,515 @@
-import React from 'react'
+import React from 'react';
+import OwlCarousel from 'react-owl-carousel'; // React Owl Carousel
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+import { Link } from 'react-router-dom';
 
-function Mainbanner() {
+function Explorepage() {
+  // Options for the Owl Carousel
+  const options = {
+    loop: true,
+    margin: 10,
+    nav: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 2,
+      },
+      1000: {
+        items: 3,
+      },
+    },
+  };
+
   return (
     <>
-    <div>
-  <div className="page-heading normal-space">
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-12">
-          <h6>Liberty NFT Market</h6>
-          <h2>View Item Details</h2>
-          <span>Home &gt; <a href="#">Item Details</a></span>
-          <div className="buttons">
-            <div className="main-button">
-              <a href="explore.html">Explore Our Items</a>
-            </div>
-            <div className="border-button">
-              <a href="create.html">Create Your NFT</a>
+      <div>
+        <div className="page-heading">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <h6>Liberty NFT Market</h6>
+                <h2>Discover Some Top Items</h2>
+                <span >
+                 <Link to='/' ><span className=' text-blue-700'>Home</span></Link> &gt; <span className=' text-white'>Explore</span>
+                </span>
+              </div>
             </div>
           </div>
-        </div>
+          <div className="featured-explore">
+  <div className="container-fluid">
+    <div className="row">
+      <div className="col-lg-12">
+        <OwlCarousel
+          className="owl-features owl-carousel"
+          autoplay={true}  // Correct autoplay syntax
+          loop={true}
+          margin={10}
+          nav
+          {...options}
+        >
+          <div className="item">
+            <div className="thumb">
+              <img src={require("../../assets/images/featured-01.jpg")} alt="" style={{ borderRadius: 20 }} />
+              <div className="hover-effect">
+                <div className="content">
+                  <h4>Triple Mutant Ape Bored</h4>
+                  <span className="author">
+                    <img src={require("../../assets/images/author.jpg")} alt="" style={{ maxWidth: 50, maxHeight: 50, borderRadius: '50%' }} />
+                    <h6>Liberty Artist<br /><a href="/">@libertyart</a></h6>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="item">
+            <div className="thumb">
+              <img src={require("../../assets/images/featured-02.jpg")} alt="" style={{ borderRadius: 20 }} />
+              <div className="hover-effect">
+                <div className="content">
+                  <h4>Bored Ape Kennel Club</h4>
+                  <span className="author">
+                    <img src={require("../../assets/images/author.jpg")} alt="" style={{ maxWidth: 50, maxHeight: 50, borderRadius: '50%' }} />
+                    <h6>Liberty Artist<br /><a href="/">@libertyart</a></h6>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="item">
+            <div className="thumb">
+              <img src={require("../../assets/images/featured-03.jpg")} alt="" style={{ borderRadius: 20 }} />
+              <div className="hover-effect">
+                <div className="content">
+                  <h4>Genesis Club by KMT</h4>
+                  <span className="author">
+                    <img src={require("../../assets/images/author.jpg")} alt="" style={{ maxWidth: 50, maxHeight: 50, borderRadius: '50%' }} />
+                    <h6>Liberty Artist<br /><a href="/">@libertyart</a></h6>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="item">
+            <div className="thumb">
+              <img src={require("../../assets/images/featured-04.jpg")} alt="" style={{ borderRadius: 20 }} />
+              <div className="hover-effect">
+                <div className="content">
+                  <h4>Crypto Aurora Guy</h4>
+                  <span className="author">
+                    <img src={require("../../assets/images/author.jpg")} alt="" style={{ maxWidth: 50, maxHeight: 50, borderRadius: '50%' }} />
+                    <h6>Liberty Artist<br /><a href="/">@libertyart</a></h6>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </OwlCarousel>
       </div>
     </div>
   </div>
-  <div className="item-details-page">
+</div>
+        </div>
+
+        <div className="discover-items">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-5">
+                <div className="section-heading">
+                  <div className="line-dec" />
+                  <h2>Discover Some Of Our <em>Items</em>.</h2>
+                </div>
+              </div>
+              <div className="col-lg-7">
+                <form id="search-form" name="gs" method="get" role="search" action="#">
+                  <div className="row">
+                    <div className="col-lg-4">
+                      <fieldset>
+                        <input type="text" name="keyword" className="searchText" placeholder="Type Something..." autoComplete="on" required />
+                      </fieldset>
+                    </div>
+                    <div className="col-lg-3">
+                      <fieldset>
+                        <select name="Category" className="form-select" aria-label="Default select example" id="chooseCategory">
+                          <option selected>All Categories</option>
+                          <option value="Music">Music</option>
+                          <option value="Digital">Digital</option>
+                          <option value="Blockchain">Blockchain</option>
+                          <option value="Virtual">Virtual</option>
+                        </select>
+                      </fieldset>
+                    </div>
+                    <div className="col-lg-3">
+                      <fieldset>
+                        <select name="Price" className="form-select" aria-label="Default select example" id="choosePrice">
+                          <option selected>Available</option>
+                          <option value="Ending-Soon">Ending Soon</option>
+                          <option value="Coming-Soon">Coming Soon</option>
+                          <option value="Closed">Closed</option>
+                        </select>
+                      </fieldset>
+                    </div>
+                    <div className="col-lg-2">
+                      <fieldset>
+                        <button type="submit" className="main-button">Search</button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              {/* Discover items list */}
+              <div className="col-lg-3">
+          <div className="item">
+            <div className="row">
+              <div className="col-lg-12">
+                <span className="author">
+                  <img src={require("../../assets/images/author.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                </span>
+                <img src={require("../../assets/images/discover-03.jpg")} alt="" style={{borderRadius: 20}} />
+                <h4>Genesis Meta Boom</h4>
+              </div>
+              <div className="col-lg-12">
+                <div className="line-dec" />
+                <div className="row">
+                  <div className="col-6">
+                    <span>Current Bid: <br /> <strong>5.15 ETH</strong></span>
+                  </div>
+                  <div className="col-6">
+                    <span>Ends In: <br /> <strong>26th Nov</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-12">
+                <div className="main-button">
+                  <Link to="/itemdetails">View Details</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-lg-3">
+          <div className="item">
+            <div className="row">
+              <div className="col-lg-12">
+                <span className="author">
+                  <img src={require("../../assets/images/author.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                </span>
+                <img src={require("../../assets/images/discover-03.jpg")} alt="" style={{borderRadius: 20}} />
+                <h4>Genesis Meta Boom</h4>
+              </div>
+              <div className="col-lg-12">
+                <div className="line-dec" />
+                <div className="row">
+                  <div className="col-6">
+                    <span>Current Bid: <br /> <strong>5.15 ETH</strong></span>
+                  </div>
+                  <div className="col-6">
+                    <span>Ends In: <br /> <strong>26th Nov</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-12">
+                <div className="main-button">
+                  <Link to="/itemdetails">View Details</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+              <div className="col-lg-3">
+          <div className="item">
+            <div className="row">
+              <div className="col-lg-12">
+                <span className="author">
+                  <img src={require("../../assets/images/author.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                </span>
+                <img src={require("../../assets/images/discover-03.jpg")} alt="" style={{borderRadius: 20}} />
+                <h4>Genesis Meta Boom</h4>
+              </div>
+              <div className="col-lg-12">
+                <div className="line-dec" />
+                <div className="row">
+                  <div className="col-6">
+                    <span>Current Bid: <br /> <strong>5.15 ETH</strong></span>
+                  </div>
+                  <div className="col-6">
+                    <span>Ends In: <br /> <strong>26th Nov</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-12">
+                <div className="main-button">
+                  <Link to="/itemdetails">View Details</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-lg-3">
+          <div className="item">
+            <div className="row">
+              <div className="col-lg-12">
+                <span className="author">
+                  <img src={require("../../assets/images/author.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                </span>
+                <img src={require("../../assets/images/discover-04.jpg")} alt="" style={{borderRadius: 20}} />
+                <h4>Another Half Ape</h4>
+              </div>
+              <div className="col-lg-12">
+                <div className="line-dec" />
+                <div className="row">
+                  <div className="col-6">
+                    <span>Current Bid: <br /> <strong>3.63 ETH</strong></span>
+                  </div>
+                  <div className="col-6">
+                    <span>Ends In: <br /> <strong>24th Nov</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-12">
+                <div className="main-button">
+                  <Link to="/itemdetails">View Details</Link>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+
+        <div className="col-lg-3">
+          <div className="item">
+            <div className="row">
+              <div className="col-lg-12">
+                <span className="author">
+                  <img src={require("../../assets/images/author.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                </span>
+                <img src={require("../../assets/images/discover-03.jpg")} alt="" style={{borderRadius: 20}} />
+                <h4>Pixel Sand Box</h4>
+              </div>
+              <div className="col-lg-12">
+                <div className="line-dec" />
+                <div className="row">
+                  <div className="col-6">
+                    <span>Current Bid: <br /> <strong>4.68 ETH</strong></span>
+                  </div>
+                  <div className="col-6">
+                    <span>Ends In: <br /> <strong>28th Nov</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-12">
+                <div className="main-button">
+                  <Link to="/itemdetails">View Details</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-lg-3">
+          <div className="item">
+            <div className="row">
+              <div className="col-lg-12">
+                <span className="author">
+                  <img src={require("../../assets/images/author.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                </span>
+                <img src={require("../../assets/images/discover-04.jpg")} alt="" style={{borderRadius: 20}} />
+                <h4>Another Half Ape</h4>
+              </div>
+              <div className="col-lg-12">
+                <div className="line-dec" />
+                <div className="row">
+                  <div className="col-6">
+                    <span>Current Bid: <br /> <strong>2.03 ETH</strong></span>
+                  </div>
+                  <div className="col-6">
+                    <span>Ends In: <br /> <strong>25th Nov</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-12">
+                <div className="main-button">
+                  <Link to="/itemdetails">View Details</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-lg-3">
+          <div className="item">
+            <div className="row">
+              <div className="col-lg-12">
+                <span className="author">
+                  <img src={require("../../assets/images/author.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                </span>
+                <img src={require("../../assets/images/discover-06.jpg")} alt="" style={{borderRadius: 20}} />
+                <h4>Invisible NFT Land</h4>
+              </div>
+              <div className="col-lg-12">
+                <div className="line-dec" />
+                <div className="row">
+                  <div className="col-6">
+                    <span>Current Bid: <br /> <strong>2.03 ETH</strong></span>
+                  </div>
+                  <div className="col-6">
+                    <span>Ends In: <br /> <strong>25th Nov</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-12">
+                <div className="main-button">
+                  <Link to="/itemdetails">View Details</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-lg-3">
+          <div className="item">
+            <div className="row">
+              <div className="col-lg-12">
+                <span className="author">
+                  <img src={require("../../assets/images/author.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                </span>
+                <img src={require("../../assets/images/discover-05.jpg")} alt="" style={{borderRadius: 20}} />
+                <h4>Another Half Ape</h4>
+              </div>
+              <div className="col-lg-12">
+                <div className="line-dec" />
+                <div className="row">
+                  <div className="col-6">
+                    <span>Current Bid: <br /> <strong>2.64 ETH</strong></span>
+                  </div>
+                  <div className="col-6">
+                    <span>Ends In: <br /> <strong>25th Nov</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-12">
+                <div className="main-button">
+                  <Link to="/itemdetails">View Details</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+              {/* Repeat other items here... */}
+            </div>
+          </div>
+        </div>
+        <div className="top-seller">
     <div className="container">
       <div className="row">
         <div className="col-lg-12">
           <div className="section-heading">
             <div className="line-dec" />
-            <h2>View Details <em>For Item</em> Here.</h2>
+            <h2>Our Top Sellers This Week.</h2>
           </div>
         </div>
-        <div className="col-lg-7">
-          <div className="left-image">
-            <img src={require("../assets/images/item-details-01.jpg")} alt="" style={{borderRadius: 20}} />
-          </div>
-        </div>
-        <div className="col-lg-5 align-self-center">
-          <h4>Dolores Haze Westworld Eye</h4>
-          <span className="author">
-            <img src={require("../assets/images/author-02.jpg")} alt="" style={{maxWidth: 50, borderRadius: '50%'}} />
-            <h6>Liberty Artist<br /><a href="#">@libertyart</a></h6>
-          </span>
-          <p>Lorem ipsum dolor sit amet, consectetu dipiscingei elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div className="col-lg-3 col-sm-6">
           <div className="row">
-            <div className="col-3">
-              <span className="bid">
-                Current Bid<br /><strong>6.06 ETH</strong><br /><em>($8,025.50)</em>
-              </span>
+            <div className="col-lg-12">
+              <div className="item">
+                <h4>1.</h4>
+                <img src={require("../../assets/images/author.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                <h6>NFT Top Artist<br /><a href="/">8.6 ETH or $12,000</a></h6>
+              </div>
             </div>
-            <div className="col-4">
-              <span className="owner">
-                Owner<br /><strong>David Walker</strong><br /><em>(@davidwalker)</em>
-              </span>
+            <div className="col-lg-12">
+              <div className="item">
+                <h4>2.</h4>
+                <img src={require("../../assets/images/author-02.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                <h6>George Brandon<br /><a href="/">4.8 ETH or $14,000</a></h6>
+              </div>
             </div>
-            <div className="col-5">
-              <span className="ends">
-                Ends In<br /><strong>3D 05H 20M 58S</strong><br /><em>(January 22nd, 2021)</em>
-              </span>
+            <div className="col-lg-12">
+              <div className="item">
+                <h4>3.</h4>
+                <img src={require("../../assets/images/author-03.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                <h6>Johnny Mayson<br /><a href="/">6.2 ETH or $26,000</a></h6>
+              </div>
             </div>
           </div>
-          <form action="submit">
-            <label htmlFor="quantity-text">Place Bid:</label>
-            <input placeholder="1 ETH" className="quantity-text" />
-            <button type="submit" id="form-submit" className="main-button">Submit Now</button>
-          </form>
         </div>
-        <div className="col-lg-12">
-          <div className="current-bid">
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="mini-heading"><h4>Current Biddings Prices ( ETH )</h4></div>
+        <div className="col-lg-3 col-sm-6">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="item">
+                <h4>4.</h4>
+                <img src={require("../../assets/images/author.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                <h6>Liberty Artist<br /><a href="/">4.5 ETH or $11,600</a></h6>
               </div>
-              <div className="col-lg-6">
-                <fieldset>
-                  <select name="Category" className="form-select" aria-label="Default select example" id="chooseCategory" onchange="this.form.click()">
-                    <option selected>Sort By: Latest</option>
-                    <option type="checkbox" name="option1" value="old">Sort By: Oldest</option>
-                    <option value="low">Sort By: Lowest</option>
-                    <option value="high">Sort By: Highest</option>
-                  </select>
-                </fieldset>
+            </div>
+            <div className="col-lg-12">
+              <div className="item">
+                <h4>5.</h4>
+                <img src={require("../../assets/images/author-02.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                <h6>Ronald Martino<br /><a href="/">7.2 ETH or $14,500</a></h6>
               </div>
-              <div className="col-lg-4 col-md-6">
-                <div className="item">
-                  <div className="left-img">
-                    <img src={require("../assets/images/current-01.jpg")} alt="" />
-                  </div>
-                  <div className="right-content">
-                    <h4>David Walker</h4>
-                    <a href="#">@davidwalker</a>
-                    <div className="line-dec" />
-                    <h6>Bid: <em>0.06 ETH</em></h6>
-                    <span className="date">24/07/2022, 22:00</span>
-                  </div>
-                </div>
+            </div>
+            <div className="col-lg-12">
+              <div className="item">
+                <h4>6.</h4>
+                <img src={require("../../assets/images/author-03.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                <h6>Anthony Brown<br /><a href="/">8.6 ETH or $7,400</a></h6>
               </div>
-              <div className="col-lg-4 col-md-6">
-                <div className="item">
-                  <div className="left-img">
-                    <img src={require("../assets/images/current-02.jpg")} alt="" />
-                  </div>
-                  <div className="right-content">
-                    <h4>David Walker</h4>
-                    <a href="#">@davidwalker</a>
-                    <div className="line-dec" />
-                    <h6>Bid: <em>0.06 ETH</em></h6>
-                    <span className="date">24/07/2022, 22:00</span>
-                  </div>
-                </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-lg-3 col-sm-6">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="item">
+                <h4>7.</h4>
+                <img src={require("../../assets/images/author.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                <h6>Liberty Artist<br /><a href="/">9.8 ETH or $14,200</a></h6>
               </div>
-              <div className="col-lg-4 col-md-6">
-                <div className="item">
-                  <div className="left-img">
-                    <img src={("../assets/images/current-03.jpg")} alt="" />
-                  </div>
-                  <div className="right-content">
-                    <h4>David Walker</h4>
-                    <a href="#">@davidwalker</a>
-                    <div className="line-dec" />
-                    <h6>Bid: <em>0.06 ETH</em></h6>
-                    <span className="date">24/07/2022, 22:00</span>
-                  </div>
-                </div>
+            </div>
+            <div className="col-lg-12">
+              <div className="item">
+                <h4>8.</h4>
+                <img src={require("../../assets/images/author-02.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                <h6>Ronald Martino<br /><a href="/">6.5 ETH or $15,000</a></h6>
               </div>
-              <div className="col-lg-4 col-md-6">
-                <div className="item">
-                  <div className="left-img">
-                    <img src={require("../assets/images/current-02.jpg")} alt="" />
-                  </div>
-                  <div className="right-content">
-                    <h4>David Walker</h4>
-                    <a href="#">@davidwalker</a>
-                    <div className="line-dec" />
-                    <h6>Bid: <em>0.06 ETH</em></h6>
-                    <span className="date">24/07/2022, 22:00</span>
-                  </div>
-                </div>
+            </div>
+            <div className="col-lg-12">
+              <div className="item">
+                <h4>9.</h4>
+                <img src={require("../../assets/images/author-03.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                <h6>David Walker<br /><a href="/">2.5 ETH or $12,000</a></h6>
               </div>
-              <div className="col-lg-4 col-md-6">
-                <div className="item">
-                  <div className="left-img">
-                    <img src={require("../assets/images/current-04.jpg")} alt="" />
-                  </div>
-                  <div className="right-content">
-                    <h4>David Walker</h4>
-                    <a href="#">@davidwalker</a>
-                    <div className="line-dec" />
-                    <h6>Bid: <em>0.06 ETH</em></h6>
-                    <span className="date">24/07/2022, 22:00</span>
-                  </div>
-                </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-lg-3 col-sm-6">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="item">
+                <h4>10.</h4>
+                <img src={require("../../assets/images/author.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                <h6>Liberty Artist<br /><a href="/">8.8 ETH or $16,800</a></h6>
               </div>
-              <div className="col-lg-4 col-md-6">
-                <div className="item">
-                  <div className="left-img">
-                    <img src={require("../assets/images/current-01.jpg")} alt="" />
-                  </div>
-                  <div className="right-content">
-                    <h4>David Walker</h4>
-                    <a href="#">@davidwalker</a>
-                    <div className="line-dec" />
-                    <h6>Bid: <em>0.06 ETH</em></h6>
-                    <span className="date">24/07/2022, 22:00</span>
-                  </div>
-                </div>
+            </div>
+            <div className="col-lg-12">
+              <div className="item">
+                <h4>11.</h4>
+                <img src={require("../../assets/images/author-02.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                <h6>Anthony Brown<br /><a href="/">7.5 ETH or $15,400</a></h6>
+              </div>
+            </div>
+            <div className="col-lg-12">
+              <div className="item">
+                <h4>12.</h4>
+                <img src={require("../../assets/images/author-03.jpg")} alt="" style={{maxWidth: 50, maxHeight: 50, borderRadius: '50%'}} />
+                <h6>David Walker<br /><a href="/">5.2 ETH or $12,300</a></h6>
               </div>
             </div>
           </div>
@@ -173,11 +517,11 @@ function Mainbanner() {
       </div>
     </div>
   </div>
-</div>
-
-    
+      </div>
     </>
-  )
+  );
 }
 
-export default Mainbanner
+export default Explorepage;
+
+

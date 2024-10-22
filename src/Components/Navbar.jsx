@@ -35,29 +35,21 @@ function Navbar() {
                   <div className="border-button">
                     <Link to="explore">Explore Top NFTs</Link>
                   </div>
-                  <div className="main-button">
-                    <a
-                      href="https://youtube.com/templatemo"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Watch Our Videos
-                    </a>
-                  </div>
+                  
                 </div>
               </div>
             </div>
 
-            <div className="col-lg-5 offset-lg-1 mt-16"> {/* Added Tailwind margin-bottom */}
+             <div className="col-lg-5 offset-lg-1 mt-16"> 
               <OwlCarousel className="owl-theme owl-carousel" {...options}>
                 <div className="item  ">
-                  <img src={banner1} alt="Banner 1" className="w-full rounded " /> {/* Added full width and rounded corners */}
+                  <img src={banner1} alt="Banner 1" className="w-full rounded " /> 
                 </div>
                 <div className="item  ">
                   <img src={banner2} alt="Banner 2" className="w-full rounded" />
                 </div>
               </OwlCarousel>
-            </div>
+            </div> 
           </div>
         </div>
       </div>

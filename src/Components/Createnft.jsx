@@ -40,7 +40,7 @@ function Createnft() {
             <img src={require("../assets/images/icon-04.png")} alt="" />
           </div>
           <h4>Add Your Digital NFT</h4>
-          <p>There are 5 different HTML pages included in this NFT <a href="https://templatemo.com/page/1"  rel="nofollow">website template</a>. You can edit or modify any section on any page as you required.</p>
+          <p>There are 5 different HTML pages included in this NFT. You can edit or modify any section on any page as you required.</p>
         </div>
       </div>
       <div className="col-lg-4">
@@ -49,7 +49,7 @@ function Createnft() {
             <img src={require("../assets/images/icon-06.png")} alt="" />
           </div>
           <h4>Sell Your NFT &amp; Make Profit</h4>
-          <p>If you would like to support our TemplateMo website, please visit <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">our contact page</a> to make a PayPal contribution. Thank you.</p>
+          <p>If you would like to support our TemplateMo website, please visit <a rel="nofollow" href="/" target="_parent">our contact page</a> to make a PayPal contribution. Thank you.</p>
         </div>
       </div>
     </div>

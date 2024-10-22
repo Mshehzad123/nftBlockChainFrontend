@@ -9,8 +9,12 @@ import icon03 from '../assets/images/icon-03.png';
 import icon04 from '../assets/images/icon-04.png';
 import icon05 from '../assets/images/icon-05.png';
 import icon06 from '../assets/images/icon-06.png';
-import collection01 from '../assets/images/collection-01.jpg';
+import nft9 from '../assets/images/nft9.avif';
+import nft10 from '../assets/images/nft10.jpg';
+import nft13 from '../assets/images/nft13.avif';
 import { Link } from 'react-router-dom';
+
+
 
 function Explore() {
   return (
@@ -34,7 +38,7 @@ function Explore() {
                       </div>
                       <h4>Blockchain</h4>
                       <div className="icon-button">
-                        <a href="/"><i className="fa fa-angle-right" /></a>
+                        <Link to="/blockchain"><i className="fa fa-angle-right" /></Link>
                       </div>
                     </div>
                   </div>
@@ -128,8 +132,8 @@ function Explore() {
               stagePadding: 0, // Ensures no half pictures on the sides
             }
           }}>
-          <div className="item">
-            <img className="w-full" src={collection01} alt="" />
+          <div className="item   h-[660px]">
+            <img className="w-full h-[400px]" src={nft9} alt="" />
             <div className="down-content p-4">
               <h4>Mutant Bored Ape Yacht Club</h4>
               <span className="collection">
@@ -143,8 +147,43 @@ function Explore() {
               </div>
             </div>
           </div>
-          <div className="item">
-            <img className="w-full" src={collection01} alt="" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div className="item   h-[660px]">
+            <img className="w-full h-[400px]" src={nft10} alt="" />
+            <div className="down-content p-4">
+              <h4>Mutant Bored Ape Yacht Club</h4>
+              <span className="collection">
+                Items In Collection:<br /><strong>310/340</strong>
+              </span>
+              <span className="category">
+                Category:<br /><strong>Digital Crypto</strong>
+              </span>
+              <div className="main-button">
+                <Link to="explore">Explore Mutant</Link>
+              </div>
+            </div>
+          </div>
+
+
+          <div className="item h-[660px]">
+            <img className="w-full h-[400px]" src={nft13} alt="" />
             <div className="down-content p-4">
               <h4>Bored Ape Kennel Club</h4>
               <span className="collection">
@@ -158,8 +197,9 @@ function Explore() {
               </div>
             </div>
           </div>
-          <div className="item">
-            <img className="w-full" src={collection01} alt="" />
+
+          <div className="item h-[660px]">
+            <img className="w-full h-[400px]" src={nft9} alt="" />
             <div className="down-content p-4">
               <h4>Genesis Collective Statue</h4>
               <span className="collection">
@@ -173,8 +213,8 @@ function Explore() {
               </div>
             </div>
           </div>
-          <div className="item">
-            <img className="w-full" src={collection01} alt="" />
+          <div className="item h-[660px]">
+            <img className="w-full h-[400px]" src={nft10} alt="" />
             <div className="down-content p-4">
               <h4>Worldwide Artwork Ground</h4>
               <span className="collection">
@@ -202,6 +242,7 @@ function Explore() {
         </div>
       </div>
     </>
+
   );
 }
 

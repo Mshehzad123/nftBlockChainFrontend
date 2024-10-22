@@ -13,9 +13,17 @@ import NoPage from "./Components/NoPage";
 import Signup from "./Admin/AdminDashborad";
 import AdminLayout from "./Admin/AdminLayout";
 import Adminblogs from "./Admin/Adminblogs";
+import Ainft from "./Components/Ainft.jsx/Ainft";
+import Blockchain from "./Components/BrowseCategory/Blockchain";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 //hello  
 
 function App() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
   return (
     <BrowserRouter>
 
@@ -27,6 +35,9 @@ function App() {
            <Route path="itemdetails" element={<Itemdetails />} />
            <Route path="author" element={<Author />} />
            <Route path="createyour" element={<Createyour />} />
+           <Route path="ainft" element={<Ainft />} />
+           <Route path="blockchain" element={<Blockchain />} />
+
           <Route path="*" element={<NoPage />} />
 
         </Route>

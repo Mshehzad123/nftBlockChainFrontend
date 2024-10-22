@@ -40,9 +40,7 @@ function Home() {
       <header className="bg-white shadow-md sticky top-0 z-50 header-area header-sticky">
         <div className="container mx-auto flex justify-between items-center py-4 px-6">
           <div className="flex items-center ">
-            <a href="/" className="text-2xl font-bold">
               <img src={logo} alt="Logo" className="h-8 " />
-            </a>
           </div>
 
           <nav className="hidden md:flex space-x-6">
@@ -51,6 +49,7 @@ function Home() {
             <Link to="/itemdetails" className={`${location.pathname === '/itemdetails' ? 'text-blue-500' : 'text-gray-700'} hover:text-blue-500 font-medium`}>Item Details</Link>
             <Link to="/author" className={`${location.pathname === '/author' ? 'text-blue-500' : 'text-gray-700'} hover:text-blue-500 font-medium`}>Author</Link>
             <Link to="/createyour" className={`${location.pathname === '/createyour' ? 'text-blue-500' : 'text-gray-700'} hover:text-blue-500 font-medium`}>Create Yours</Link>
+            <Link to="/ainft" className={`${location.pathname === '/ainft' ? 'text-blue-500' : 'text-gray-700'} hover:text-blue-500 font-medium`}>AI nft</Link>
           </nav>
 
           <div className="md:hidden">
